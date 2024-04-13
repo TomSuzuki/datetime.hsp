@@ -1,0 +1,6 @@
+#include "datetime.as"
+
+    font "Meiryo UI", 12 : pos 5, 5
+
+    // 指定フォーマットで解釈
+    mes toDatetimeStrFormat("2024-04-01 12 30 05", "YYYY MM DD hh mm ss")

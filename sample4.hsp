@@ -1,0 +1,29 @@
+/*
+ * inputボックスに入力し、更新ボタンを押すことで日付を整形して表示します。
+ */
+
+#include "datetime.as"
+
+    screen 0, 400, 300
+    title "datetime | sample"
+
+    // 現在時刻
+    datetime = strf("%04d-%02d-%02d %02d:%02d:%02d", gettime(0), gettime(1), gettime(3), gettime(4), gettime(5), gettime(6))
+
+*refresh
+
+    cls 0
+
+    font "Meiryo UI", 18, font_antialias + font_bold
+    objmode objmode_usefont
+    
+    pos 20, 25 : mes "▼ 入力"
+    pos 20, 50 : input datetime, 360, 30
+
+    pos 20, 100 : mes "▼ 結果"
+    pos 20, 125 : mes toFormatedDatetime(datetime)
+
+    objsize 120, 40
+    pos 140, 200 : button goto "更新", *refresh
+
+    stop
