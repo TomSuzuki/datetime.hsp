@@ -152,7 +152,9 @@
     datetime = toNonFormatedDatetime(datetime)
 
     // フォーマットを定義
-    formats = "YYYY MM DD hh mm ss", "Mon DD hh mm ss YYYY", "Mon DD YYYY", "DD Mon YYYY", "DD Mon YYYY hh mm ss", "YYYY MM DD"
+    formats                 = "YYYY MM DD", "YYYY MM DD hh mm ss"
+    formats.length(formats) = "Mon DD YYYY", "Mon DD hh mm ss YYYY"
+    formats.length(formats) = "DD Mon YYYY", "DD Mon YYYY hh mm ss"
 
     // すべてのフォーマットに対して整形を試す
     dimtype formatedTestDatetime, vartype("str")
